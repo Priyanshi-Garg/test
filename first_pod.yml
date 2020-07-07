@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: mweb-pod2
+  labels:
+    env: dev
+    region: IN
+
+spec:
+  containers:
+  - name: myweb-con
+    image: httpd

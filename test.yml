@@ -28,7 +28,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/html-files"
+    path: "/home/docker/test"
 
 ---
 apiVersion: v1
@@ -67,9 +67,6 @@ spec:
           mountPath: /usr/local/apache2/htdocs 
 
       volumes:
-      - name: web-vol2
-        hostPath:
-           path: /home/docker/test
       - name: web-vol1
         persistentVolumeClaim:
            claimName: html-pvc

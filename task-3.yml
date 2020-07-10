@@ -46,16 +46,15 @@ spec:
       - name: html-con
         image: httpd
         volumeMounts:
-        - name: web-vol2
-          mountPath: /usr/local/apache2/htdocs
-        - name: web-vol1
+        - name: all-in-one
           mountPath: /usr/local/apache2/htdocs
 
       volumes:
-      - name: web-vol2
-        hostPath:
-           path: /home/docker/test
-      - name: web-vol1
-        persistentVolumeClaim:
-           claimName: html-pvc
+      - name: all-in-one
+        projected:
+          sources:
+          - hostPath:
+             path: /home/docker/test
+          - persistentVolumeClaim:
+             claimName: html-pvc
         

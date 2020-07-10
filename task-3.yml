@@ -46,8 +46,8 @@ spec:
       - name: html-con
         image: httpd
         volumeMounts:
-        - name: web-vol1
-          mountPath: /host/docker/test
+        - name: web-vol2
+          mountPath: /usr/local/apache2/htdocs
         - name: web-vol1
           mountPath: /usr/local/apache2/htdocs
 

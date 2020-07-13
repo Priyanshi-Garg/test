@@ -51,10 +51,6 @@ spec:
 
       volumes:
       - name: all-in-one
-        projected:
-          sources:
-          - hostPath:
-             path: /home/docker/test
           - persistentVolumeClaim:
              claimName: html-pvc
         
